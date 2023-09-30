@@ -3,15 +3,18 @@
 import os
 import subprocess
 import sys
+import time
+import tqdm
 from pathlib import Path
 from typing import List
 
-from PyQt5.QtWidgets import QApplication, QMessageBox
-from PyQt5.QtCore import Qt
 import notify2
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
 
 def shred_files(files: List[str], shred_iterations: int = 5):
-    for file in files:
+    for file in tqdm.tqdm(files, desc='Shredding files'):
         subprocess.run(['shred', '-u', '-n', str(shred_iterations), file], check=True)
 
 def shred_directory(directory: str, shred_iterations: int = 5):
@@ -23,35 +26,33 @@ def shred_directory(directory: str, shred_iterations: int = 5):
 
 def shred_path(path: str, shred_iterations: int = 5):
     if os.path.isfile(path):
-        dialog = QMessageBox.question(
-            None,
-            "Question",
-            "Are you sure you want to shred the file?",
-            QMessageBox.Yes | QMessageBox.No,
-            QMessageBox.Yes
+        dialog = Gtk.MessageDialog(
+            parent=None,
+            flags=0,
+            message_type=Gtk.MessageType.QUESTION,
+            buttons=Gtk.ButtonsType.YES_NO,
+            text="Are you sure you want to shred the file?"
         )
-        if dialog == QMessageBox.Yes:
+        response = dialog.run()
+        if response == Gtk.ResponseType.YES:
             shred_files([path], shred_iterations)
-            notify2.Notification('Shred', f'Finished shredding {path}', 'dialog-information').show()
+        dialog.destroy()
     elif os.path.isdir(path):
-        dialog = QMessageBox.question(
-            None,
-            "Question",
-            "Are you sure you want to shred the directory and all its contents?",
-            QMessageBox.Yes | QMessageBox.No,
-            QMessageBox.Yes
+        dialog = Gtk.MessageDialog(
+            parent=None,
+            flags=0,
+            message_type=Gtk.MessageType.QUESTION,
+            buttons=Gtk.ButtonsType.YES_NO,
+            text="Are you sure you want to shred the directory and all its contents?"
         )
-        if dialog == QMessageBox.Yes:
+        response = dialog.run()
+        if response == Gtk.ResponseType.YES:
             shred_directory(path, shred_iterations)
-            notify2.Notification('Shred', f'Finished shredding {path}', 'dialog-information').show()
+        dialog.destroy()
 
 if __name__ == '__main__':
     notify2.init('Shred')
-    app = QApplication(sys.argv)
-
     for path in sys.argv[1:]:
         path = Path(path).resolve()
         shred_path(str(path))
-
-    sys.exit(0)
-
+        notify2.Notification('Shred', f'Finished shredding {path}', 'dialog-information').show()

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Service
+MimeType=inode/directory;application/octet-stream;
+Actions=Shred-It
+
+[Desktop Action Shred-It]
+Name=Shred-It
+Icon=/usr/share/kio/servicemenus/shredder.png
+Exec=python3 /usr/share/kio/servicemenus/shred.py %F

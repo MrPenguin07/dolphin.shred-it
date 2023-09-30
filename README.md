@@ -27,4 +27,5 @@ $ shred.py <file/dir>
 
 ### Notes
 _The default is 5 passes, can be changed within shred.py_
+
 Todo: Update to gtk4

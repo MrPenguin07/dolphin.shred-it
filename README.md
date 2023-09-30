@@ -1,5 +1,6 @@
 # Dolphin-shredder
 Dolphin right click context menu -> Shred files/dir
+
 Securely delete your files from within the Dolphin file manager!
 
 Dependencies: 

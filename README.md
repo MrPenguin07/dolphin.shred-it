@@ -35,4 +35,4 @@ $ python3 shred.py <file/dir>
 ### Notes
 _The default is 5 passes, can be changed within shred.py_
 
-Todo: Update to gtk4
+Todo: Update to gtk4 - or Qt would make more sense :)

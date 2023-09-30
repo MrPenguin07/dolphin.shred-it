@@ -7,7 +7,7 @@ Dependencies:
 - Dolphin
 - notify2
 - tqdm
-- GTK
+- PyQt5 or GTK3 (for dialog box)
 - shred (Gentoo: sys-apps/coreutils)
 
 ## INSTALL
@@ -24,15 +24,17 @@ Right-click context menu;
 
 ![image](https://github.com/MrPenguin07/dolphin-shredder/assets/127086564/7736015e-c175-456a-9a78-7229b60e6895)
 
-GTK confirmation;
+Qt5 Confirmation;
 
-![image](https://github.com/MrPenguin07/dolphin-shredder/assets/127086564/fff57eb0-093f-479a-8999-6eff431f463d)
+![image](https://github.com/MrPenguin07/dolphin-shredder/assets/127086564/2ead02c7-2510-486e-8fe5-5e86f99d13ff)
 
-May also be run from the shell;
 
-$ python3 shred.py <file/dir>
 
 ### Notes
 _The default is 5 passes, can be changed within shred.py_
 
-Todo: Update to gtk4 - or Qt would make more sense :)
+May also be run from the shell;
+
+`$ python3 shred.py <file/dir>`
+
+There is also a GTK3 version of the script (shred-gtk.py) 

@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import List
 
 from PyQt5.QtWidgets import QApplication, QMessageBox
+from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt
 import notify2
 
@@ -23,25 +24,25 @@ def shred_directory(directory: str, shred_iterations: int = 5):
 
 def shred_path(path: str, shred_iterations: int = 5):
     if os.path.isfile(path):
-        dialog = QMessageBox.question(
-            None,
-            "Question",
-            "Are you sure you want to shred the file?",
-            QMessageBox.Yes | QMessageBox.No,
-            QMessageBox.Yes
-        )
-        if dialog == QMessageBox.Yes:
+        dialog = QMessageBox()
+        dialog.setIconPixmap(QIcon("/usr/share/kio/servicemenus/shredder.png").pixmap(64, 64))
+        dialog.setWindowTitle("Question")
+        dialog.setText("Are you sure you want to shred the file?")
+        dialog.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        dialog.setDefaultButton(QMessageBox.Yes)
+        response = dialog.exec_()
+        if response == QMessageBox.Yes:
             shred_files([path], shred_iterations)
             notify2.Notification('Shred', f'Finished shredding {path}', 'dialog-information').show()
     elif os.path.isdir(path):
-        dialog = QMessageBox.question(
-            None,
-            "Question",
-            "Are you sure you want to shred the directory and all its contents?",
-            QMessageBox.Yes | QMessageBox.No,
-            QMessageBox.Yes
-        )
-        if dialog == QMessageBox.Yes:
+        dialog = QMessageBox()
+        dialog.setIconPixmap(QIcon("/usr/share/kio/servicemenus/shredder.png").pixmap(64, 64))
+        dialog.setWindowTitle("Question")
+        dialog.setText("Are you sure you want to shred the directory and all its contents?")
+        dialog.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        dialog.setDefaultButton(QMessageBox.Yes)
+        response = dialog.exec_()
+        if response == QMessageBox.Yes:
             shred_directory(path, shred_iterations)
             notify2.Notification('Shred', f'Finished shredding {path}', 'dialog-information').show()
 
@@ -54,4 +55,3 @@ if __name__ == '__main__':
         shred_path(str(path))
 
     sys.exit(0)
-

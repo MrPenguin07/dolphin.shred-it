@@ -30,7 +30,7 @@ GTK confirmation;
 
 May also be run from the shell;
 
-$ shred.py <file/dir>
+$ python3 shred.py <file/dir>
 
 ### Notes
 _The default is 5 passes, can be changed within shred.py_

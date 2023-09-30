@@ -29,6 +29,7 @@ GTK confirmation;
 ![image](https://github.com/MrPenguin07/dolphin-shredder/assets/127086564/fff57eb0-093f-479a-8999-6eff431f463d)
 
 May also be run from the shell;
+
 $ shred.py <file/dir>
 
 ### Notes

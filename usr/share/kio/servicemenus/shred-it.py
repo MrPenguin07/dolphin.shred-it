@@ -11,18 +11,20 @@ from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt
 import notify2
 
-def shred_files(files: List[str], shred_iterations: int = 5):
+SHRED_ITERATIONS = 5
+
+def shred_files(files: List[str], shred_iterations: int = SHRED_ITERATIONS):
     for file in files:
         subprocess.run(['shred', '-u', '-n', str(shred_iterations), file], check=True)
 
-def shred_directory(directory: str, shred_iterations: int = 5):
+def shred_directory(directory: str, shred_iterations: int = SHRED_ITERATIONS):
     for root, dirs, files in reversed(list(os.walk(directory))):
         shred_files([os.path.join(root, file) for file in files], shred_iterations)
         for dir in dirs:
             os.rmdir(os.path.join(root, dir))
     os.rmdir(directory)
 
-def shred_path(path: str, shred_iterations: int = 5):
+def shred_path(path: str, shred_iterations: int = SHRED_ITERATIONS):
     if os.path.isfile(path):
         dialog = QMessageBox()
         dialog.setIconPixmap(QIcon("/usr/share/kio/servicemenus/shred-it.png").pixmap(64, 64))

@@ -34,7 +34,7 @@ _There is an optional GTK3 version of the script, use this version with instruct
 ### Notes
 
 **The default is 5 passes, can be changed within shred.py**  
-`shred_iterations: int = 5`
+`SHRED_ITERATION = 5`
 
 May also be run from the shell;  
 `$ python3 shred.py <file/dir>`

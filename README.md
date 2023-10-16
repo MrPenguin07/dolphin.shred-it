@@ -5,8 +5,8 @@ Securely delete your files from within the Dolphin file manager!
 
 Dependencies: 
 - Dolphin
-- notify2
-- PyQt5 or GTK3 (for dialog box)
+- `PyQt5>=5.9.0`  
+  `notify2>=0.3.1`
 - `shred` for your distro (Gentoo: sys-apps/coreutils)
 
 ## INSTALL

@@ -10,10 +10,17 @@ Dependencies:
 - `shred` - part of the [Coreutils](https://www.gnu.org/software/coreutils/) package, incl. in most distros base installation.
 
 ## INSTALL
+**System Wide**
 ```
-$ git clone https://github.com/MrPenguin07/dolphin.shred-it.git && cd dolphin-shredder
+$ git clone https://github.com/MrPenguin07/dolphin.shred-it.git && cd dolphin.shred-it
 $ sudo cp usr/share/kio/servicemenus/* /usr/share/kio/servicemenus/
 $ sudo chmod +x /usr/share/kio/servicemenus/shred.py
+```
+**Local User**
+```
+$ git clone https://github.com/MrPenguin07/dolphin.shred-it.git && cd dolphin.shred-it
+$ cp usr/share/kio/servicemenus/* ~/.local/share/kio/servicemenus
+$ chmod +x ~/.local/share/kio/servicemenus/shred.py
 ```
 _There is an optional GTK3 version of the script, use this version with instructions as above_
 

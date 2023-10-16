@@ -5,8 +5,8 @@ Securely delete your files from within the Dolphin file manager!
 
 Dependencies: 
 - Dolphin
-- `PyQt5>=5.9.0`  
-  `notify2>=0.3.1`
+- `PyQt5`  
+  `notify2`
 - `shred` - part of the [Coreutils](https://www.gnu.org/software/coreutils/) package, incl. in most distros base installation.
 
 ## INSTALL

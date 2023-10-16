@@ -1,6 +1,6 @@
-# Dolphin-shredder
-Dolphin right click context menu -> Shred files/dir
+# Dolphin Shred-it
 
+Dolphin right click context menu -> Shred files/dir  
 Securely delete your files from within the Dolphin file manager!
 
 Dependencies: 
@@ -11,29 +11,32 @@ Dependencies:
 
 ## INSTALL
 ```
-$ git clone https://github.com/MrPenguin07/dolphin-shredder.git && cd dolphin-shredder
+$ git clone https://github.com/MrPenguin07/dolphin.shred-it.git && cd dolphin-shredder
 $ sudo cp usr/share/kio/servicemenus/* /usr/share/kio/servicemenus/
 $ sudo chmod +x /usr/share/kio/servicemenus/shred.py
 ```
-Add the context menu in dolphin settings;
+_There is an optional GTK3 version of the script, use this version with instructions as above_
+
+#### Add the context menu in dolphin settings;
 
 ![image](https://github.com/MrPenguin07/dolphin-shredder/assets/127086564/505c97c7-68d0-4bd8-8b23-ea14f575a244)
 
-Right-click context menu;
+#### Right-click context menu;
 
 ![image](https://github.com/MrPenguin07/dolphin-shredder/assets/127086564/7736015e-c175-456a-9a78-7229b60e6895)
 
-Qt5 Confirmation;
+#### Qt5 Confirmation;
 
 ![image](https://github.com/MrPenguin07/dolphin-shredder/assets/127086564/2ead02c7-2510-486e-8fe5-5e86f99d13ff)
 
 
 
 ### Notes
-_The default is 5 passes, can be changed within shred.py_
 
-May also be run from the shell;
+**The default is 5 passes, can be changed within shred.py**  
+`shred_iterations: int = 5`
 
+May also be run from the shell;  
 `$ python3 shred.py <file/dir>`
 
-There is also a GTK3 version of the script (shred-gtk.py) 
+

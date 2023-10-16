@@ -25,7 +25,7 @@ def shred_directory(directory: str, shred_iterations: int = 5):
 def shred_path(path: str, shred_iterations: int = 5):
     if os.path.isfile(path):
         dialog = QMessageBox()
-        dialog.setIconPixmap(QIcon("/usr/share/kio/servicemenus/shredder.png").pixmap(64, 64))
+        dialog.setIconPixmap(QIcon("/usr/share/kio/servicemenus/shred-it.png").pixmap(64, 64))
         dialog.setWindowTitle("Question")
         dialog.setText("Are you sure you want to shred the file?")
         dialog.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
@@ -36,7 +36,7 @@ def shred_path(path: str, shred_iterations: int = 5):
             notify2.Notification('Shred', f'Finished shredding {path}', 'dialog-information').show()
     elif os.path.isdir(path):
         dialog = QMessageBox()
-        dialog.setIconPixmap(QIcon("/usr/share/kio/servicemenus/shredder.png").pixmap(64, 64))
+        dialog.setIconPixmap(QIcon("/usr/share/kio/servicemenus/shred-it.png").pixmap(64, 64))
         dialog.setWindowTitle("Question")
         dialog.setText("Are you sure you want to shred the directory and all its contents?")
         dialog.setStandardButtons(QMessageBox.Yes | QMessageBox.No)

@@ -5,5 +5,5 @@ Actions=Shred-It
 
 [Desktop Action Shred-It]
 Name=Shred-It
-Icon=/usr/share/kio/servicemenus/shredder.png
-Exec=python3 /usr/share/kio/servicemenus/shred.py %F
+Icon=/usr/share/kio/servicemenus/shred-it.png
+Exec=python3 /usr/share/kio/servicemenus/shred-it.py %F

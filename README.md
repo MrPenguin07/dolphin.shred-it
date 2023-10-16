@@ -7,7 +7,7 @@ Dependencies:
 - Dolphin
 - `PyQt5>=5.9.0`  
   `notify2>=0.3.1`
-- `shred` for your distro (Gentoo: sys-apps/coreutils)
+- `shred` - part of the [Coreutils](https://www.gnu.org/software/coreutils/) package, incl. in most distros base installation.
 
 ## INSTALL
 ```

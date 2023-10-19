@@ -3,6 +3,24 @@
 Dolphin right click context menu -> Shred files/dir  
 Securely delete your files from within the Dolphin file manager!
 
+```
+ .
+├──  gtk-version
+│  ├──  shred-it.desktop
+│  ├──  shred-it.png
+│  └──  shred-it.py
+├──  usr
+│  └──  share
+│     └──  kio
+│        └──  servicemenus
+│           ├──  shred-it.desktop
+│           ├──  shred-it.png
+│           └──  shred-it.py
+├──  LICENSE
+├──  README.md
+└──  requirements.txt
+```
+
 Dependencies: 
 - Dolphin
 - `PyQt5`  

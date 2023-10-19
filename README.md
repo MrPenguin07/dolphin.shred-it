@@ -1,3 +1,4 @@
+![dolphin shred-it-128x128](https://github.com/MrPenguin07/dolphin.shred-it/assets/127086564/5038c302-28d6-4ece-8986-ca87577af14a)
 # Dolphin Shred-it
 
 Dolphin right click context menu -> Shred files/dir  

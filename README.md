@@ -85,7 +85,7 @@ When using `shred` for secure file deletion, it's important to be aware of the f
   
 - **RAID Systems**: On RAID configurations with parity, old data may remain recoverable even after `shred` has been run.
 
-These caveats are also faced by bleachbit and other more professional tools, they are inherent to modern disks & filesystems.
+These caveats are also faced by bleachbit and other more professional tools, they are inherent to modern disks & filesystems.  
 This app is NOT designed for professional grade data destruction, however it should prove effective for;
   - Personal info, Bank statements, Work files you took home and finished using etc.
     

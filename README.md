@@ -7,7 +7,7 @@
 </h1>
 
 
-Dolphin right click context menu -> Shred files/dir  
+**Dolphin right click context menu -> Shred files/dir**  
 Securely delete your files from within the Dolphin file manager!
 
 ```
@@ -63,7 +63,7 @@ _There is an optional GTK3 version of the script, use this version with instruct
 
 
 
-### Notes
+## Notes
 
 **The default is 5 passes, can be changed within shred.py**  
 `SHRED_ITERATIONS = 5`
@@ -71,4 +71,23 @@ _There is an optional GTK3 version of the script, use this version with instruct
 May also be run from the shell;  
 `$ python3 shred.py <file/dir>`
 
+## Caveats/Limitations
+
+When using `shred` for secure file deletion, it's important to be aware of the following limitations:
+
+- **Snapshot File Systems**: Ineffective on file systems configured to use snapshots as snapshots may retain copies of the data.
+  
+- **Journaling File Systems**:
+  + _Somewhat effective_ on file systems that focus on metadata journaling (e.g. ext4 with the default `data=ordered`).
+  + Less effective on file systems that journal both metadata and file data.
+
+- **SSD and Wear Leveling**: Varied effectiveness on SSDs due to firmware & wear leveling algorithms.
+  
+- **RAID Systems**: On RAID configurations with parity, old data may remain recoverable even after `shred` has been run.
+
+These caveats are also faced by bleachbit and other more professional tools, they are inherent to modern disks & filesystems.
+This app is NOT designed for professional grade data destruction, however it should prove effective for;
+  - Personal info, Bank statements, Work files you took home and finished using etc.
+    
+**For more reliable secure deletion options, consider low level tools.**
 

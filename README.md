@@ -1,5 +1,11 @@
-![dolphin shred-it-128x128](https://github.com/MrPenguin07/dolphin.shred-it/assets/127086564/5038c302-28d6-4ece-8986-ca87577af14a)
-# Dolphin Shred-it
+<p align="center">
+  <img src="https://github.com/MrPenguin07/dolphin.shred-it/assets/127086564/5038c302-28d6-4ece-8986-ca87577af14a" alt="dolphin shred-it-128x128" />
+</p>
+
+<h1 align="center">
+  Dolphin Shred-it
+</h1>
+
 
 Dolphin right click context menu -> Shred files/dir  
 Securely delete your files from within the Dolphin file manager!

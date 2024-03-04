@@ -11,11 +11,6 @@
 Securely delete your files from within the Dolphin file manager!
 
 ```
- .
-├──  gtk-version
-│  ├──  shred-it.desktop
-│  ├──  shred-it.png
-│  └──  shred-it.py
 ├──  usr
 │  └──  share
 │     └──  kio

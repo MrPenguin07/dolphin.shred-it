@@ -68,7 +68,8 @@ May also be run from the shell;
 
 ## Caveats/Limitations
 
-When using `shred` for secure file deletion, it's important to be aware of the following limitations:
+> [!IMPORTANT] 
+> When using `shred` for secure file deletion, it's important to be aware of the following limitations:
 
 - **Snapshot File Systems**: Ineffective on file systems configured to use snapshots as snapshots may retain copies of the data.
   
